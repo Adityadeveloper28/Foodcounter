@@ -1,12 +1,12 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
-require('dotenv').config();
+const express = require("express");
+const mongoose = require("mongoose");
+const cors = require("cors");
+require("dotenv").config();
 
 const mongoURI = process.env.MONGO_URL;
 
 const corsOptions = {
-  origin: 'https://foodcounter-frontend.vercel.app/',  // Replace with the origin of your frontend
+  origin: "https://foodcounter-frontend.vercel.app/", // Replace with the origin of your frontend
   optionsSuccessStatus: 200,
 };
 
@@ -23,15 +23,15 @@ const foodSchema = new mongoose.Schema({
   image: String,
 });
 
-const Food = mongoose.model('Food', foodSchema);
+const Food = mongoose.model("Food", foodSchema);
 
 // Route for the root path
-app.get('/', (req, res) => {
-  res.send('Welcome to the Food Counter API!');
+app.get("/", (req, res) => {
+  res.send("Welcome to the Food Counter API!");
 });
 
 // Route for fetching foods
-app.get('/api/foods', async (req, res) => {
+app.get("/api/foods", async (req, res) => {
   try {
     const data = await Food.find();
     res.json(data);
