@@ -1,14 +1,19 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 require('dotenv').config();
 
 const mongoURI = process.env.MONGO_URL;
 
-
+const corsOptions = {
+  origin: 'https://foodcounter-frontend.vercel.app/',  // Replace with the origin of your frontend
+  optionsSuccessStatus: 200,
+};
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+app.use(cors(corsOptions));
 
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
 
