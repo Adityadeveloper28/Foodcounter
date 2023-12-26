@@ -6,7 +6,7 @@ require('dotenv').config();
 const mongoURI = process.env.MONGO_URL;
 
 const corsOptions = {
-  origin: 'http://localhost:3000',  // Replace with the origin of your frontend
+  origin: 'https://foodcounter-frontend.vercel.app/',  // Replace with the origin of your frontend
   optionsSuccessStatus: 200,
 };
 
