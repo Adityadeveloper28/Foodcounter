@@ -9,7 +9,6 @@ const mongoURI = process.env.MONGO_URL;
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors(corsOptions));
 
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
 
