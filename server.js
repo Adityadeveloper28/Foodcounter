@@ -1,8 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+require('dotenv').config();
 
-const mongoURI = "mongodb+srv://aditya:aditya123@cluster0.zoiqagj.mongodb.net/food";
+const mongoURI = process.env.MONGO_URL;
 
 const corsOptions = {
   origin: 'http://localhost:3000',  // Replace with the origin of your frontend

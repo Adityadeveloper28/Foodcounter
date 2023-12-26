@@ -1,2 +1,0 @@
-# Foodcounter
-mern stack
